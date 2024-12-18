@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Show Player Details</title>
+    {% load static %}
+    <link rel="stylesheet " href="{% static '/style.css' %}" />
+  </head>
+  <body>
+    <center>
+      <strong
+        ><u><h1>PLAYER DETAILS</h1></u></strong
+      >
+    </center>
+    <center>
+      <table class="table table-striped table-bordered table=80%">
+        <thead class="thead-dark">
+          <tr>
+            <th>Player ID</th>
+            <th>Player Name</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Game</th>
+            <th>Region</th>
+            <th colspan="2">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for player in players %}
+          <tr>
+            <td>{{ player.pid }}</td>
+            <td>{{ player.pname }}</td>
+            <td>{{ player.dob }}</td>
+            <td>{{ player.gender }}</td>
+            <td>{{ player.game }}</td>
+            <td>{{ player.region }}</td>
+            <td>
+              <a href="/edit/{{player.id}}"
+                ><span class="glyphicon glyphicon-pencil">Edit</span>
+              </a>
+            </td>
+            <td>
+              <a href="/delete/{{player.id}}">Delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </center>
+    <br />
+    <br />
+    <center><a href="/ply" class="btn btn-primary">Add New Record</a></center>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Record</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/style.css' %}" />
+  </head>
+  <body>
+    <center>
+      <form method="POST" class="post-form" action="/update/{{player.id}}">
+        {% csrf_token %}
+        <div class="container">
+          <br />
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+              <h3>Update Details</h3>
+            </div>
+          </div>
+          <br />
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Player ID : </label
+            >&nbsp;&nbsp;&nbsp;&nbsp;
+            <input
+              type="text"
+              name="pid"
+              id="id_pid"
+              required
+              maxlength="10"
+              value="{{player.pid}}"
+            />
+          </div>
+          <br />
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Player Name : </label>
+            <input
+              type="text"
+              name="pname"
+              id="id_pname"
+              required
+              maxlength="50"
+              value="{{player.pname}}"
+            />
+          </div>
+          <br />
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">DOB : </label
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input
+              type="text"
+              name="dob"
+              id="id_dob"
+              required
+              maxlength="20"
+              value="{{player.dob}}"
+            />
+          </div>
+          <br />
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Gender : </label
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input
+              type="text"
+              name="gender"
+              id="id_gender"
+              required
+              maxlength="10"
+              value="{{player.gender}}"
+            />
+          </div>
+          <br />
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Game : </label
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input
+              type="text"
+              name="game"
+              id="id_game"
+              required
+              maxlength="30"
+              value="{{player.game}}"
+            />
+          </div>
+          <br />
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Region : </label
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input
+              type="text"
+              name="region"
+              id="id_region"
+              required
+              maxlength="35"
+              value="{{player.region}}"
+            />
+          </div>
+          <br />
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+              <button type="submit" class="btn btnsuccess">Update</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </center>
+  </body>
+</html>
